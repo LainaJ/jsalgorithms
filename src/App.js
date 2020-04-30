@@ -8,9 +8,6 @@ class App extends Component {
   let left = 0
   let movingPointer = left + 1
   let countUniq = 0
-  // if (arr !== []){
-  //     countUniq = 1
-  // }
   
   while(movingPointer < arr.length){
       if(arr[left] === arr[movingPointer]){
@@ -22,8 +19,6 @@ class App extends Component {
   }
   console.log( countUniq)
 }
-
-
 
  smallerNumbersThanCurrent = (nums) => {
   //make object

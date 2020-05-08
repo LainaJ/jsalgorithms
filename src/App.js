@@ -17,7 +17,6 @@ class App extends Component {
           countUniq++
       }
   }
-  console.log( countUniq)
 }
 
  smallerNumbersThanCurrent = (nums) => {
@@ -45,9 +44,53 @@ class App extends Component {
       }
 return obj
   
-  
   //return an array of countNumsSmaller
 };
+
+ canConstructRansom (ransomNote, magazine) {
+  if(ransomNote === ""){
+    return true
+  }
+  let ransObj = {}
+  let magObj = {}
+  //loop through ransomNote string
+  //create obj from the ransomnote string
+  for(let i = 0; i < ransomNote.length; i++){
+      if(ransObj[ransomNote[i]]){
+          ransObj[ransomNote[i]]++
+       }
+      else {
+          ransObj[ransomNote[i]] = 1
+      }
+  }
+  //loop through magazine  string
+  //create obj from magazing string
+  for(let i = 0; i < magazine.length; i++){
+      if(magObj[magazine[i]]){
+          magObj[magazine[i]]++
+      }
+      else {
+          magObj[magazine[i]] = 1
+      }
+    }
+    console.log(ransObj)
+    console.log(magObj)
+//then compare two obj
+   //if key in ransomNote obj does not exist in mag obj, return false 
+ for(let letter in ransObj){
+    if(!(magObj[letter])){
+      return false
+    }
+//if frequency of a letter in ransomNote Obj is = or less than freq of letter in magaz obj, return true
+// if not (if ransomnote letter freq is HIGHER than magazine letter freq, return false) 
+   if(ransObj[letter] > magObj[letter]){
+    
+      return false
+    }
+  return true
+ }
+};
+
 
 
 
@@ -55,6 +98,7 @@ render() {
   return (
     <div>
       {this.countUniqueValues([1, 1, 1, 1, 2])}
+      {this.canConstructRansom("the", "the cat is home")}
     </div>
   )
   }

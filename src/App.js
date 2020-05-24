@@ -91,7 +91,7 @@ class App extends Component {
 };
 
 
-validAnagram2 = (string1, string2) => {
+validAnagram = (string1, string2) => {
   if (string1.length !== string2.length) {
       return false 
      }
@@ -159,6 +159,8 @@ render() {
       {/* {this.countUniqueValues([1, 1, 1, 1, 2])} */}
       {/* {this.canConstructRansom("the", "the cat is home")} */}
       {this.singleNumber([4,1,2,1,2])}
+      {this.validAnagram("banana","ananab")}
+      <p>Algorithms</p> 
     </div>
   )
   }

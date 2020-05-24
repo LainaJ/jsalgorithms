@@ -156,6 +156,7 @@ reverseString = (s) => {
   //take that character, put it at the first index
   newst += s[i]
   }
+   return newst
 }
 
 reverseStringOrig = (s) => {
@@ -174,12 +175,15 @@ reverseStringOrig = (s) => {
 render() {
   return (
     <div>
+      <h1>Algorithms</h1> 
       {/* {this.countUniqueValues([1, 1, 1, 1, 2])} */}
       {/* {this.canConstructRansom("the", "the cat is home")} */}
+      <h4>Single Number</h4>
       {this.singleNumber([4,1,2,1,2])}
+      <h4>Valid Anagram</h4>
       {this.validAnagram("banana","ananab")}
+      <h4>Reverse String</h4>
       {this.reverseString(["h","e","l","l","o"])}
-      <p>Algorithms</p> 
     </div>
   )
   }

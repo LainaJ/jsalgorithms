@@ -72,10 +72,8 @@ class App extends Component {
           magObj[magazine[i]] = 1
       }
     }
-    console.log(ransObj)
-    console.log(magObj)
 //then compare two obj
-   //if key in ransomNote obj does not exist in mag obj, return false 
+//if key in ransomNote obj does not exist in mag obj, return false 
  for(let letter in ransObj){
     if(!(magObj[letter])){
       return false
@@ -114,8 +112,6 @@ validAnagram = (string1, string2) => {
          obj2[string2[i]] = 1   
       }
   }
-      console.log(obj1)
-      console.log(obj2)
   //are there even the same letters present
   for(let key in obj1){
      if (!(key in obj2)){
@@ -152,6 +148,28 @@ singleNumber = (nums) => {
   }   
 };
 
+//this does NOT mutate original string
+reverseString = (s) => {
+  let newst = ""
+  for(let i = s.length-1; i >= 0; i--){
+  //start at last index 
+  //take that character, put it at the first index
+  newst += s[i]
+  }
+}
+
+reverseStringOrig = (s) => {
+  let i = 0
+  let j = s.length -1
+  while(i < j){
+      let temp = s[i]
+      s[i] = s[j]
+      s[j] = temp
+      i++
+      j--
+  }
+  return s
+}
 
 render() {
   return (
@@ -160,6 +178,7 @@ render() {
       {/* {this.canConstructRansom("the", "the cat is home")} */}
       {this.singleNumber([4,1,2,1,2])}
       {this.validAnagram("banana","ananab")}
+      {this.reverseString(["h","e","l","l","o"])}
       <p>Algorithms</p> 
     </div>
   )

@@ -173,38 +173,27 @@ reverseStringOrig = (s) => {
 }
 
 isPrime = (oneNum) => {
-  if(oneNum === 1){
+  if(oneNum < 2){
       return false
   }
-  else if(oneNum === 2){
-    return true
-  }
-  else {
-    for(let i = 2; i < oneNum; i++){
-      if(oneNum % i === 0 ){
-        return false
-      }
-      else {
-        return true
-      } 
+  for(let i = 2; i < oneNum; i++){
+    if(oneNum % i === 0 ){
+      return false
     }
   }
- 
+  return true 
 }
 
 primesLessThanNum = (n) => {
-  //determine if prime
-  if(n < 2){
-    return false
+  let primes = []
+  //loop through all numbers 2 up to (but not equal to) n 
+  for(let i = 2; i < n; i++ ){
+      //determine if prime
+    if(!(this.isPrime(i))){
+      primes.push(i)    
+    } 
   }
-
-  //determine if prime 
-  // for(let i = 2; i < n; i++){
-  //   if(i % i  )
-  // }
-
-
-
+  return primes.length
 }
 
 render() {
@@ -219,6 +208,7 @@ render() {
       {this.validAnagram("banana","ananab")}
       <h4>Reverse String</h4>
       {this.reverseString(["h","e","l","l","o"])}
+      <h4>Is Prime</h4>
       {this.isPrime(37)}
       <h4>Primes Less Than Num</h4>
       {/* {this.primesLessThanNum(10)} */}

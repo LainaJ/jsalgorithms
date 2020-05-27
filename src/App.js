@@ -196,6 +196,50 @@ primesLessThanNum = (n) => {
   return primes.length
 }
 
+validPalindrome = (word) => {
+//two pointers method?
+    //start iterating at beginning, and at end
+        //compare if they are equal, good (if not return false!)
+      if(word === ""){
+          return true    
+      }
+      let i = 0
+      let j = word.length -1 
+      while(i < j){
+          if(word[i] !== word[j]){
+              return false
+          }
+      }
+      return true   
+}
+
+ validPattern = (word, pattern) => {
+  let w = word.split("")
+  let pat = pattern.split("")
+  let pointer = 0
+
+console.log(w)
+console.log(pat)
+
+  let i = 0
+  while(i < word.length){
+    if(w[i] !== pat[pointer]){
+       if(isNaN(pat[pointer])){
+          return false (word, pattern)
+        }
+        else {
+        i += parseInt(pat[pointer])
+      }
+    } else {
+       i++
+      }
+   pointer++     
+  }
+    return true 
+}
+
+
+
 render() {
   return (
     <div>
@@ -203,15 +247,19 @@ render() {
       {/* {this.countUniqueValues([1, 1, 1, 1, 2])} */}
       {/* {this.canConstructRansom("the", "the cat is home")} */}
       <h4>Single Number</h4>
-      {this.singleNumber([4,1,2,1,2])}
+      {/* {this.singleNumber([4,1,2,1,2])} */}
       <h4>Valid Anagram</h4>
-      {this.validAnagram("banana","ananab")}
+      {/* {this.validAnagram("banana","ananab")} */}
       <h4>Reverse String</h4>
-      {this.reverseString(["h","e","l","l","o"])}
+      {/* {this.reverseString(["h","e","l","l","o"])} */}
       <h4>Is Prime</h4>
-      {this.isPrime(37)}
+      {/* {this.isPrime(37)} */}
       <h4>Primes Less Than Num</h4>
       {/* {this.primesLessThanNum(10)} */}
+      <h4>Valid Palindrome</h4>
+      {/* {this.validPalindrome("hannah")} */}
+      <h4> Valid Pattern</h4>
+      {this.validPattern('laina', '31a')? "True!": "False! Not a pattern!"}
     </div>
   )
   }

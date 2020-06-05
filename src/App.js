@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import './App.css';
+import JSfundamentals from './JSfundamentals'
 
 
 class App extends Component {
@@ -239,6 +240,10 @@ console.log(pat)
     return true 
 }
 
+handleClickJSfundamentals = (e) => {
+  e.preventDefault()
+  console.log("OK, get ready!")
+}
 
 
 render() {
@@ -261,6 +266,10 @@ render() {
       {/* {this.validPalindrome("hannah")} */}
       <h4> Valid Pattern</h4>
       {this.validPattern('laina', '31a')? "True!": "False! Not a pattern!"}
+
+  <h1>JS Fundamentals Practice </h1>
+    <h5 onClick={(e) => this.handleClickJSfundamentals(e)}>Click here for extra practice.</h5>
+       
     </div>
   )
   }

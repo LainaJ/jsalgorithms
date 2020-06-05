@@ -159,6 +159,7 @@ reverseString = (s) => {
    return newst
 }
 
+//this DOES mutate the original string
 reverseStringOrig = (s) => {
   let i = 0
   let j = s.length -1

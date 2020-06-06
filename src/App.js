@@ -245,7 +245,6 @@ handleClickJSfundamentals = (e) => {
   console.log("OK, get ready!")
 }
 
-
 render() {
   return (
     <div>
@@ -266,6 +265,13 @@ render() {
       {/* {this.validPalindrome("hannah")} */}
       <h4> Valid Pattern</h4>
       {this.validPattern('laina', '31a')? "True!": "False! Not a pattern!"}
+      <h4> Two Sum </h4>
+      <p>Option 1 is brute force. But to improve run time complexity, we need a more efficient way to check if the complement exists in the array. 
+        If the complement exists, we need to look up its index. 
+        What is the best way to maintain a mapping of each element in the array to its index?
+      </p>
+      <p>A hash table.</p>
+        {this.twoSum('',)}
 
   <h1>JS Fundamentals Practice </h1>
     <h5 onClick={(e) => this.handleClickJSfundamentals(e)}>Click here for extra practice.</h5>

@@ -245,6 +245,18 @@ handleClickJSfundamentals = (e) => {
   console.log("OK, get ready!")
 }
 
+twoSum = (nums, target) => {
+//   for(let i = 0; i < nums.length; i++){
+//     let firstAddend = target - nums[i]
+//     if ( firstAddend in nums) { 
+        
+//      let firstInd = nums.indexOf(firstAddend)
+//      return [firstInd, i] 
+//     }
+//  }
+
+}
+
 render() {
   return (
     <div>

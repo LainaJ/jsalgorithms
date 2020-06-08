@@ -271,7 +271,7 @@ render() {
         What is the best way to maintain a mapping of each element in the array to its index?
       </p>
       <p>A hash table.</p>
-        {this.twoSum('',)}
+        {this.twoSum([2, 7, 11, 15], 9)}
 
   <h1>JS Fundamentals Practice </h1>
     <h5 onClick={(e) => this.handleClickJSfundamentals(e)}>Click here for extra practice.</h5>

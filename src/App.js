@@ -268,7 +268,7 @@ largestSubarraySum = (array) => {
       //if not, increment to the next one
   //return tempsum
   let tempSum = array[0]
-  let maxSum = array[0]
+  let maxSum = 0
   for(let i = 1; i < array.length; i++){
 
       if(tempSum + array[i] > array[i]){

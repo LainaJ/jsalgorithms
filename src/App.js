@@ -254,7 +254,34 @@ twoSum = (nums, target) => {
 //      return [firstInd, i] 
 //     }
 //  }
+}
 
+
+largestSubarraySum = (array) => {
+  //iterate over array
+  //define temporary sum
+  //if current element added to temporary sum would increase temp sum,
+      //then update tempsum
+  //if it would decrease it, tempsum will equal the current index
+  //if temp num is higher than max
+      //if yes, then it becomes new MAX sum 
+      //if not, increment to the next one
+  //return tempsum
+  let tempSum = array[0]
+  let maxSum = array[0]
+  for(let i = 1; i < array.length; i++){
+
+      if(tempSum + array[i] > array[i]){
+          tempSum += array[i]
+      }
+      else{
+          tempSum = array[i]
+      }
+      if(tempSum > maxSum){
+          maxSum = tempSum
+      }
+  }
+  return maxSum
 }
 
 render() {
@@ -284,6 +311,8 @@ render() {
       </p>
       <p>A hash table.</p>
         {this.twoSum([2, 7, 11, 15], 9)}
+      <h4>Largest Subarray Sum</h4>
+      {this.largestSubarraySum([-1, 2, 3])}
 
   <h1>JS Fundamentals Practice </h1>
     <h5 onClick={(e) => this.handleClickJSfundamentals(e)}>Click here for extra practice.</h5>
